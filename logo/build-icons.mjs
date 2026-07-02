@@ -14,7 +14,7 @@ const SIZES = [16, 32, 48, 128, 180, 192, 256, 512];
 const pngs = {};
 for (const s of SIZES) {
   // dark tile behind the glyph so small sizes stay legible on any background
-  const buf = await sharp(svg).resize(s, s, { fit: "contain", background: "#0a0a12" })
+  const buf = await sharp(svg, { density: 300 }).resize(s, s, { fit: "contain", background: "#0a0a12" })
     .flatten({ background: "#0a0a12" }).png().toBuffer();
   pngs[s] = buf;
   writeFileSync(join(out, `icon-${s}.png`), buf);
