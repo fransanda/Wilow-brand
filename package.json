@@ -12,7 +12,7 @@
     "./icons/*": "./icons/*"
   },
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/**/*.mjs",
     "build:icons": "node logo/build-icons.mjs"
   },
   "peerDependencies": { "react": ">=18", "framer-motion": ">=11" },
