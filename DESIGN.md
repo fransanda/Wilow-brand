@@ -45,7 +45,7 @@
 - Buttons: variants (primary: bg-primary text-bg, secondary: border border-primary text-primary, ghost: transparent text-primary)
   - Each has hover/active/focus-visible/disabled states
   - Primary buttons have a subtle glow on hover
-- Inputs: not needed (no forms collecting user data on this landing page)
+- Inputs: bg-surface, border border-border (focus: border-primary + focus ring), radius md, text-text, placeholder text-muted
 - Cards: bg-surface, border border-border, radius md
 - Modals: centered overlay, bg-surface, backdrop blur
 
@@ -61,7 +61,7 @@
 - Semantic HTML (headings hierarchy, landmark regions, alt text)
 
 ## Implementation pointer
-- Tokens live in: tailwind.config.ts (extended theme) + src/app/globals.css (CSS custom properties fallback)
+- Tokens live in THIS package: `css/theme.css` (CSS custom properties `--wilow-*`) + `tokens.ts` (typed JS mirror). Consumers import these — never restate values locally.
 
 ## Canonical source
 This file lives in the `wilow-brand` package and is THE source of truth for every Wilow surface
