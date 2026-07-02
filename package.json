@@ -1,0 +1,21 @@
+{
+  "name": "wilow-brand",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Wilow design tokens + logos — the change-once brand source of truth",
+  "license": "MIT",
+  "exports": {
+    "./css/theme.css": "./css/theme.css",
+    "./tokens": "./tokens.ts",
+    "./logo": "./logo/WilowLogo.tsx",
+    "./logo/wilow-logo.svg": "./logo/wilow-logo.svg",
+    "./icons/*": "./icons/*"
+  },
+  "scripts": {
+    "test": "node --test test/",
+    "build:icons": "node logo/build-icons.mjs"
+  },
+  "peerDependencies": { "react": ">=18", "framer-motion": ">=11" },
+  "peerDependenciesMeta": { "react": { "optional": true }, "framer-motion": { "optional": true } },
+  "devDependencies": { "sharp": "^0.34.0", "png-to-ico": "^3.0.1" }
+}

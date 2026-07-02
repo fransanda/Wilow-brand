@@ -1,0 +1,18 @@
+/* Wilow brand tokens — generated from DESIGN.md's Color tokens table. DESIGN.md WINS. */
+:root {
+  --wilow-bg: #050508;
+  --wilow-bg-elevated: #0a0a12;
+  --wilow-surface: #111118;
+  --wilow-surface-hover: #181825;
+  --wilow-text: #e8e8ed;
+  --wilow-text-muted: #8888a0;
+  --wilow-primary: #00ff88;
+  --wilow-primary-dim: #00cc66;
+  --wilow-accent: #7c3aed;
+  --wilow-accent-glow: #a78bfa;
+  --wilow-border: #1e1e2e;
+  --wilow-border-glow: rgba(0, 255, 136, 0.15);
+  --wilow-success: #00ff88;
+  --wilow-warning: #f59e0b;
+  --wilow-error: #ef4444;
+}
