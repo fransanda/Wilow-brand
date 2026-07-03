@@ -27,4 +27,19 @@ for (const s of SIZES) {
 }
 writeFileSync(join(out, "favicon.ico"), await pngToIco([pngs[16], pngs[32], pngs[48]]));
 writeFileSync(join(out, "wilow.ico"), await pngToIco([pngs[16], pngs[32], pngs[48], pngs[128], pngs[256]]));
-console.log(`icons/ regenerated (${SIZES.length} PNGs + 2 ICOs).`);
+
+// Android adaptive-icon foreground layer: transparent background (no dark tile), glyph
+// scaled into the OS mask's safe zone so masking/parallax never clips it. Standard stroke
+// weight — the 3x small-icon compensation above only applies at <=48px.
+const FOREGROUND_SIZE = 432;
+const SAFE_ZONE = 264;
+const glyph = await sharp(svg)
+  .resize(SAFE_ZONE, SAFE_ZONE, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+  .png().toBuffer();
+const pad = (FOREGROUND_SIZE - SAFE_ZONE) / 2;
+const foreground = await sharp({
+  create: { width: FOREGROUND_SIZE, height: FOREGROUND_SIZE, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } },
+}).composite([{ input: glyph, left: pad, top: pad }]).png().toBuffer();
+writeFileSync(join(out, "wilow-foreground-432.png"), foreground);
+
+console.log(`icons/ regenerated (${SIZES.length} PNGs + 2 ICOs + 1 adaptive-icon foreground).`);

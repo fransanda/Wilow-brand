@@ -6,7 +6,8 @@ import { dirname, join } from "node:path";
 
 const icons = join(dirname(fileURLToPath(import.meta.url)), "..", "icons");
 const expected = ["favicon.ico", "wilow.ico", "icon-16.png", "icon-32.png", "icon-48.png",
-  "icon-128.png", "icon-180.png", "icon-192.png", "icon-256.png", "icon-512.png"];
+  "icon-128.png", "icon-180.png", "icon-192.png", "icon-256.png", "icon-512.png",
+  "wilow-foreground-432.png"];
 
 test("icon build produced every platform size", () => {
   for (const f of expected) {

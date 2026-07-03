@@ -50,6 +50,10 @@ npm test
 - Update `css/theme.css` and `tokens.ts` to match DESIGN.md
 - Never edit theme.css or tokens.ts and forget to update DESIGN.md — the test will catch it
 
+## Android adaptive icon
+
+`icons/wilow-foreground-432.png` is the adaptive-icon foreground layer for Android (API 26+): 432×432, transparent background, glyph scaled into the OS mask's safe zone (inner ~264px, centered). Pass it as the foreground input to `@capacitor/assets` or `android/app/src/main/res/mipmap-anydpi-v26/*.xml` alongside a solid background color/layer — unlike the other `icons/icon-*.png` sizes, it is not pre-flattened onto the dark tile.
+
 ## Logo credit
 
 Robot glyph derived from a Gregor Cresnar (Noun Project) icon, CC-BY — restyled for Wilow.
