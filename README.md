@@ -1,3 +1,7 @@
+> **DEPRECATED.** This repository is frozen. Wilow now lives in one private repository,
+> `fransanda/Wilow`. What you installed from here keeps working at its last version and receives
+> no further updates. For current Wilow, use the installer at https://wilow.team.
+
 # wilow-brand
 
 Design tokens + logos — the change-once brand source of truth for every Wilow surface.
